@@ -14,17 +14,26 @@ reinas.
 Funciones auxiliares:
 
 Funciones a implementar:
-- asignar_reinaA(fila, columa) => Sitúa un 1
+- asignar_reina(fila, columa) => Sitúa un 1
 en la casilla (Fila, Columna) indicando que está
 ocupada por una reina.
 - eliminar_reina(fila, columna) => Sitúa un
 0 en la casilla (Fila, Columna) indicando que esa casilla
 está libre (antes estaba ocupada por una reina y ahora
 deja de estarlo).
-- recibe_jaque(int fila, int columna) => Devuelve 1
+- recibe_jaque(fila, columna) => Devuelve 1
 si la casilla (Fila, Columna) recibe jaque de alguna
 reina y 0 en caso contrario.
 '''
+
+tablero = [[0, 0, 0, 0, 0, 0, 0, 0],
+           [0, 0, 0, 0, 0, 0, 0, 0],
+           [0, 0, 0, 0, 0, 0, 0, 0],
+           [0, 0, 0, 0, 0, 0, 0, 0],
+           [0, 0, 0, 0, 0, 0, 0, 0],
+           [0, 0, 0, 0, 0, 0, 0, 0],
+           [0, 0, 0, 0, 0, 0, 0, 0],
+           [0, 0, 0, 0, 0, 0, 0, 0]]
 
 
 def recibe_jaque(fila, columna):
@@ -36,7 +45,7 @@ def asignar_reina(fila, columna):
 
 
 def eliminar_reina(fila, columna):
-    pass
+    tablero[fila][columna] = 0
 
 
 def colocar_reina(columna):
@@ -59,3 +68,12 @@ def colocar_reina(columna):
                     eliminar_reina(fila, columna)
                     ++fila
     return posicion
+
+
+def main():
+    colocar_reina(0)
+    for i in range(len(tablero)):
+        print(tablero[i])
+
+
+main()
